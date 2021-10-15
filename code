@@ -1,0 +1,48 @@
+
+import java.util.*;
+public class IterateHashMap {
+    public static void main(String[] args) {
+        HashMap <Integer, String> map = new HashMap<Integer,String>();
+        map.put(1, "Hi");
+        map.put(2, "How");
+        map.put(3,"are");
+        map.put(4,"you");
+        Iterator itr = map.entrySet().iterator();
+        System.out.println("While");
+        while(itr.hasNext()) {
+            Map.Entry me = (Map.Entry) itr.next();
+            
+            System.out.println("Key  " + me.getKey() + " value " +me.getValue());
+        }
+        System.out.println("For Loop");
+        for(Map.Entry me2: map.entrySet()) {
+            
+            System.out.println("key  " + me2.getKey()+ " value  " +me2.getValue());
+        }
+    }
+}
+
+
+public class RotateString {
+    public static void main(String[] args) {
+        String s1 = "abcd";
+        String s2 = "dabc";
+        if (checkRotation(s1,s2)){
+            System.out.println(s2 + " is rotation of  "+ s1);
+        } else {
+            System.out.println("no rotation");
+        }
+    }
+        public static boolean checkRotation(String s1,String s2) {
+            if(s1.length() != s2.length()){
+                return false;
+            }
+            String s3 = s1+s2;
+            if (s3.contains(s2))
+                return true;
+                else 
+                return false;
+                
+        }
+    }
+
